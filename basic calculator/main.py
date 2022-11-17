@@ -1,13 +1,44 @@
 from tkinter import *
 
 def button_press(num):
-    pass
+    
+    global equation_text
+
+    equation_text = equation_text + str(num)
+
+    equation_label.set(equation_text)
 
 def equals():
-    pass
+
+    global equation_text
+
+    try:
+
+        total = str(eval(equation_text))
+
+        equation_label.set(total)
+
+        equation_text = total
+
+    except SyntaxError:
+
+        equation_label.set("syntax error")
+
+        equation_text = ""
+
+    except ZeroDivisionError:
+
+        equation_label.set("arithmetic error")
+
+        equation_text = ""
 
 def clear():
-    pass
+    
+    global equation_text
+
+    equation_label.set("")
+
+    equation_text = ""
 
 window = Tk()
 window.title("Calculator program!")
@@ -15,11 +46,11 @@ window.geometry("500x500")
 
 equation_text = ""
 
-euqation_label = StringVar()
+equation_label = StringVar()
 
 label = Label(
     window,
-    textvariable=euqation_label,
+    textvariable=equation_label,
     font=('consolas',20),
     bg="white",
     width=24,
@@ -164,7 +195,7 @@ equal = Button(
     height=4,
     width=9,
     font=35,
-    command= lambda: button_press('='))
+    command=equals)
 equal.grid(row=3,column=2)
 
 decimal = Button(
@@ -184,9 +215,5 @@ clear = Button(
     font=35,
     command=clear)
 clear.pack()
-
-
-
-
 
 window.mainloop()
