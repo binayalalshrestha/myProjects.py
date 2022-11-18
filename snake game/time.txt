@@ -1,0 +1,4 @@
+virtualenvironment = hiss
+game file = main.py
+coded by : binaya lal shrestha
+date : 11/18
