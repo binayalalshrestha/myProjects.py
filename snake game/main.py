@@ -3,7 +3,7 @@ import random
 
 GAME_WIDTH = 700
 GAME_HEIGHT = 700
-SPEED = 100
+SPEED = 120
 SPACE_SIZE = 50
 BODY_PARTS = 3
 SNAKE_COLOR = "#00FF00"
@@ -144,8 +144,6 @@ def game_over():
 
 
 
-
-
 window = Tk()
 window.title("Snake game")
 window.resizable(False, False)
@@ -188,5 +186,8 @@ snake = Snake()
 food = Food()
 
 next_turn(snake, food)
+
+# icon = PhotoImage(file='b.png')
+# window.iconphoto(True,icon)
 
 window.mainloop()

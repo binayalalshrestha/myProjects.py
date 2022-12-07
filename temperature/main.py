@@ -6,7 +6,7 @@ def submit():
 window = Tk()
 window.title("Temperature!")
 
-hotImage = PhotoImage(file='hot.png')
+hotImage = PhotoImage(file='images\hot.png')
 hotLabel = Label(image=hotImage)
 hotLabel.pack()
 
@@ -27,7 +27,7 @@ scale = Scale(window,
 scale.set(((scale['from']-scale['to'])/2)+scale['to'])
 scale.pack()
 
-coldImage = PhotoImage(file='cold.png')
+coldImage = PhotoImage(file='images\cold.png')
 coldLabel = Label(image=coldImage)
 coldLabel.pack()
 
