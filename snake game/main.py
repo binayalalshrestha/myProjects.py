@@ -1,3 +1,5 @@
+#snakegame
+
 from tkinter import *
 import random
 
